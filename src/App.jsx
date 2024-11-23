@@ -2,19 +2,19 @@ import { useEffect, useState } from "react";
 import { fetchImages } from "./api";
 
 function Header() {
-  return(
-      <header className="hero is-dark is-blod">
-        <div className="hero-body">
-          <div className="container">
+  return (
+    <header className="hero is-dark is-blod">
+      <div className="hero-body">
+        <div className="container">
           <h1 className="title">Cute Dog Images</h1>
-          </div>
         </div>
-      </header>
+      </div>
+    </header>
   );
 }
 
 function Image(props) {
-  return(
+  return (
     <div className="card">
       <div className="card-image">
         <figure className="image">
@@ -34,10 +34,10 @@ function Gallery(props) {
   if (urls == null) {
     return <Loading />;
   }
-  return(
+  return (
     <div className="columns is-vcentered is-multiline">
       {urls.map((url) => {
-        return(
+        return (
           <div key={url} className="column is-3">
             <Image src={url} />
           </div>
@@ -88,7 +88,7 @@ function Main() {
       setUrls(urls);
     });
   }
-  return(
+  return (
     <main>
       <section className="section">
         <div className="container">
@@ -105,20 +105,20 @@ function Main() {
 }
 
 function Footer() {
-  return(
+  return (
     <footer className="footer">
-        <div className="content has-text-centered">
-          <p>Dog images are retrieved from Dog API</p>
-          <p>
-            <a href="https://dog.ceo/dog-api/about">Donate to Dog API</a>
-          </p>
-        </div>
-      </footer>
+      <div className="content has-text-centered">
+        <p>Dog images are retrieved from Dog API</p>
+        <p>
+          <a href="https://dog.ceo/dog-api/about">Donate to Dog API</a>
+        </p>
+      </div>
+    </footer>
   );
 }
 
 function App() {
-  return(
+  return (
     <div>
       <Header />
       <Main />
@@ -126,6 +126,5 @@ function App() {
     </div>
   );
 }
-
 
 export default App;
